@@ -18,13 +18,19 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="day1\a.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="day1\b.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="common.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="day2\day2a.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="day2\day2b.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="day1\day1a.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="day1\day1b.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -38,5 +44,6 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="input\day1.txt" />
+    <Text Include="input\day2.txt" />
   </ItemGroup>
 </Project>
