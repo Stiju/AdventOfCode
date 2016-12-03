@@ -7,6 +7,8 @@ int main() {
 	RUN(1b);
 	RUN(2a);
 	RUN(2b);
+	RUN(3a);
+	RUN(3b);
 }
 
 #undef RUN

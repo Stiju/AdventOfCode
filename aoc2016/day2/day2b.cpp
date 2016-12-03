@@ -57,5 +57,6 @@ namespace day2b {
 		std::cout << "day2b ";
 		std::cout << std::hex << get_bathroom_code(input) << '\n';
 		//std::cout << std::hex << get_bathroom_code("ULL\nRRDDD\nLURDL\nUUUUD") << '\n';
+		std::cout << std::dec;
 	}
 }
