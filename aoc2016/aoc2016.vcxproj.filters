@@ -45,6 +45,15 @@
     <ClCompile Include="day4\day4b.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="day5\day5a.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="day5\day5b.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="md5.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="aoc.h">
@@ -54,6 +63,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="stopwatch.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="md5.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
