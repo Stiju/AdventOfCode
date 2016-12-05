@@ -39,6 +39,12 @@
     <ClCompile Include="day3\day3b.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="day4\day4a.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="day4\day4b.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="aoc.h">
@@ -47,10 +53,14 @@
     <ClInclude Include="common.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="stopwatch.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="input\day1.txt" />
     <Text Include="input\day2.txt" />
     <Text Include="input\day3.txt" />
+    <Text Include="input\day4.txt" />
   </ItemGroup>
 </Project>
