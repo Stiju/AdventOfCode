@@ -143,18 +143,18 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="common.cpp" />
-    <ClCompile Include="day1\day1a.cpp" />
-    <ClCompile Include="day1\day1b.cpp" />
-    <ClCompile Include="day2\day2a.cpp" />
-    <ClCompile Include="day2\day2b.cpp" />
-    <ClCompile Include="day3\day3a.cpp" />
-    <ClCompile Include="day3\day3b.cpp" />
-    <ClCompile Include="day4\day4a.cpp" />
-    <ClCompile Include="day4\day4b.cpp" />
-    <ClCompile Include="day5\day5a.cpp" />
-    <ClCompile Include="day5\day5b.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="md5.cpp" />
+    <ClCompile Include="solutions\day01a.cpp" />
+    <ClCompile Include="solutions\day01b.cpp" />
+    <ClCompile Include="solutions\day02a.cpp" />
+    <ClCompile Include="solutions\day02b.cpp" />
+    <ClCompile Include="solutions\day03a.cpp" />
+    <ClCompile Include="solutions\day03b.cpp" />
+    <ClCompile Include="solutions\day04a.cpp" />
+    <ClCompile Include="solutions\day04b.cpp" />
+    <ClCompile Include="solutions\day05a.cpp" />
+    <ClCompile Include="solutions\day05b.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="aoc.h" />
