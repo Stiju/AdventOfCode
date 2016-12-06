@@ -143,6 +143,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="common.cpp" />
+    <ClCompile Include="solutions\day06b.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="md5.cpp" />
     <ClCompile Include="solutions\day01a.cpp" />
@@ -155,6 +156,7 @@
     <ClCompile Include="solutions\day04b.cpp" />
     <ClCompile Include="solutions\day05a.cpp" />
     <ClCompile Include="solutions\day05b.cpp" />
+    <ClCompile Include="solutions\day06a.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="aoc.h" />
@@ -167,6 +169,7 @@
     <Text Include="input\day2.txt" />
     <Text Include="input\day3.txt" />
     <Text Include="input\day4.txt" />
+    <Text Include="input\day6.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
