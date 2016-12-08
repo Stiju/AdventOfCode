@@ -38,7 +38,7 @@ constexpr uint32_t leftrotate(uint32_t x, uint32_t c) {
 }
 
 constexpr uint32_t bitwise_part(int i, uint32_t x, uint32_t y, uint32_t z) {
-	return (i < 16) ? x & y | ~x & z : (i < 32) ? x & z | y & ~z : (i < 48) ? x ^ y ^ z : y ^ (x | ~z);
+	return (i < 16) ? z ^ (x & (y ^ z)) : (i < 32) ? y ^ (z & (x ^ y)) : (i < 48) ? x ^ y ^ z : y ^ (x | ~z);
 }
 
 constexpr int data_index(int i) {
@@ -52,7 +52,7 @@ constexpr void process(uint32_t& a, uint32_t b, uint32_t c, uint32_t d, uint32_t
 
 MD5Value md5(const char* message, int length) {
 	MD5Value value{0x67452301, 0xefcdab89, 0x98badcfe, 0x10325476};
-	size_t chunks = (length + 8) / 64;
+	size_t chunks = (length + 8) >> 6;
 
 	int remaining = length;
 	bool ending = false;
