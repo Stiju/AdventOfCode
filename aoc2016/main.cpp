@@ -4,6 +4,7 @@
 #define RUN(x) day##x::run()
 
 int main() {
+	std::ios::sync_with_stdio(false);
 	StopWatch sw;
 	//RUN(1a);
 	//RUN(1b);
@@ -19,7 +20,9 @@ int main() {
 	//RUN(6b);
 	//RUN(7a);
 	//RUN(7b);
-	RUN(8a);
+	//RUN(8a);
+	RUN(9a);
+	RUN(9b);
 }
 
 #undef RUN
