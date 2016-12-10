@@ -21,8 +21,9 @@ int main() {
 	//RUN(7a);
 	//RUN(7b);
 	//RUN(8a);
-	RUN(9a);
-	RUN(9b);
+	//RUN(9a);
+	//RUN(9b);
+	RUN(10a);
 }
 
 #undef RUN

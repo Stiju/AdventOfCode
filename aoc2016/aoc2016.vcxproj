@@ -162,6 +162,7 @@
     <ClCompile Include="solutions\day08a.cpp" />
     <ClCompile Include="solutions\day09a.cpp" />
     <ClCompile Include="solutions\day09b.cpp" />
+    <ClCompile Include="solutions\day10a.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="aoc.h" />
@@ -171,6 +172,7 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="input\day1.txt" />
+    <Text Include="input\day10.txt" />
     <Text Include="input\day2.txt" />
     <Text Include="input\day3.txt" />
     <Text Include="input\day4.txt" />
