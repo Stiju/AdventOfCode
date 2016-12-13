@@ -164,6 +164,7 @@
     <ClCompile Include="solutions\day09b.cpp" />
     <ClCompile Include="solutions\day10a.cpp" />
     <ClCompile Include="solutions\day12a.cpp" />
+    <ClCompile Include="solutions\day13a.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="aoc.h" />

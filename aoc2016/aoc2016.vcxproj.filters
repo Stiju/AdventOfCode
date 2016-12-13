@@ -81,6 +81,9 @@
     <ClCompile Include="solutions\day12a.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="solutions\day13a.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="aoc.h">
