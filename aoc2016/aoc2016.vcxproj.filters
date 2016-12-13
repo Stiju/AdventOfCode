@@ -78,6 +78,9 @@
     <ClCompile Include="solutions\day10a.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="solutions\day12a.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="aoc.h">
@@ -103,5 +106,7 @@
     <Text Include="input\day8.txt" />
     <Text Include="input\day9.txt" />
     <Text Include="input\day10.txt" />
+    <Text Include="input\day11.txt" />
+    <Text Include="input\day12.txt" />
   </ItemGroup>
 </Project>
