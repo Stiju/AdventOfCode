@@ -12,5 +12,6 @@
 #include <vector>
 #include <array>
 #include <queue>
+#include <cstring>
 
 std::string read_file(const char* filename);
