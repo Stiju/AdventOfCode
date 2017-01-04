@@ -12,7 +12,7 @@ namespace day4a {
 			l.second++;
 		}
 		std::sort(letters.begin(), letters.end(), [](const auto& a, const auto& b) {
-			return a.second > b.second || a.second == b.second && a.first < b.first;
+			return a.second > b.second || (a.second == b.second && a.first < b.first);
 		});
 		for(int i = 0; i < 5; ++i) {
 			if(letters[i].first != checksum[i]) {

@@ -3,11 +3,12 @@
 
 namespace day5b {
 	uint32_t byteswap(uint32_t value) {
-		return (value & 0xff) << 24 | (value & 0xff00) << 8 | (value >> 8) & 0xff00 | (value >> 24) & 0xff;
+		return (value & 0xff) << 24 | (value & 0xff00) << 8 | ((value >> 8) & 0xff00) | ((value >> 24) & 0xff);
 	}
 
 	uint32_t find_password(const std::string& input) {
-		size_t i = 0, j = 0, size = input.size();
+		int i = 0, j = 0;
+		size_t size = input.size();
 		uint32_t password = 0;
 		char key[64], *key_end = key + size, bitset = 0;
 		std::memcpy(key, input.c_str(), size);
@@ -37,7 +38,7 @@ namespace day5b {
 
 	void run() {
 		std::cout << "day5b ";
-		std::cout << (void*)find_password("abbhdwsy") << '\n';
-		//std::cout << (void*)find_password("abc") << '\n';
+		std::cout << std::hex << find_password("abbhdwsy") << std::dec << '\n';
+		//std::cout << std::hex << find_password("abc") << std::dec << '\n';
 	}
 }

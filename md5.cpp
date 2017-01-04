@@ -51,7 +51,7 @@ constexpr void process(uint32_t& a, uint32_t b, uint32_t c, uint32_t d, uint32_t
 }
 
 MD5Value md5(const char* message, int length) {
-	MD5Value value{0x67452301, 0xefcdab89, 0x98badcfe, 0x10325476};
+	MD5Value value{{0x67452301, 0xefcdab89, 0x98badcfe, 0x10325476}};
 	size_t chunks = (length + 8) >> 6;
 
 	int remaining = length;

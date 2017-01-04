@@ -49,7 +49,7 @@ namespace day1b {
 	int calculate_distance(const std::string& input) {
 		std::istringstream stream(input);
 		OpCode opcode;
-		BunnyHunter hunter{0,0,0};
+		BunnyHunter hunter{{{0,0}},0};
 		std::unordered_set<uint64_t> visited;
 		visited.insert(hunter.position.hash);
 		while(stream >> opcode) {
