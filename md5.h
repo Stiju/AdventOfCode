@@ -11,5 +11,6 @@ union MD5Value {
 };
 
 MD5Value md5(const char* message, int length);
+void md5_to_chars(char* buffer, MD5Value value);
 
 #endif

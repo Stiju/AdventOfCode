@@ -149,3 +149,18 @@ MD5Value md5(const char* message, int length) {
 	}
 	return value;
 }
+
+void uint32_to_chars(uint32_t value, char* buffer) {
+	const char* hex_digits = "0123456789abcdef";
+	for(int i = 0, j = 1; i < 8; ++i) {
+		buffer[i] = hex_digits[((value >> ((i + j) * 4)) & 0xf)];
+		j = -j;
+	}
+}
+
+void md5_to_chars(char* buffer, MD5Value value) {
+	uint32_to_chars(value.chunks.a, buffer);
+	uint32_to_chars(value.chunks.b, buffer + 8);
+	uint32_to_chars(value.chunks.c, buffer + 16);
+	uint32_to_chars(value.chunks.d, buffer + 24);
+}

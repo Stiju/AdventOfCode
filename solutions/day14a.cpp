@@ -2,20 +2,18 @@
 #include "../md5.h"
 
 namespace day14a {
-	uint32_t byteswap(uint32_t value) {
-		return (value & 0xff) << 24 | (value & 0xff00) << 8 | ((value >> 8) & 0xff00) | ((value >> 24) & 0xff);
+	template<int N>
+	constexpr bool is_sequence(const char* haystack, char needle) {
+		return needle == haystack[N - 1] && is_sequence<N - 1>(haystack, needle);
 	}
-	bool is_sequence(const char* haystack, char needle, int count) {
-		for(int i = 1; i < count; ++i) {
-			if(haystack[i] != needle) {
-				return false;
-			}
-		}
-		return true;
+	template<>
+	constexpr bool is_sequence<1>(const char* haystack, char needle) {
+		return needle == haystack[0];
 	}
-	char find_sequence(const char* haystack, char needle, int count) {
+	template<int count>
+	char find_sequence(const char* haystack, char needle) {
 		for(int i = 0; i < 33 - count; ++i) {
-			if((needle == 0 || haystack[i] == needle) && is_sequence(haystack + i, haystack[i], count)) {
+			if((!needle || haystack[i] == needle) && is_sequence<count>(haystack + i, haystack[i])) {
 				return haystack[i];
 			}
 		}
@@ -29,11 +27,8 @@ namespace day14a {
 		int length = std::snprintf(cache.md5, 36, "%s%d", key, index);
 		for(int i = 0; i <= stretch; ++i) {
 			auto hash = md5(cache.md5, length);
-			hash.chunks.a = byteswap(hash.chunks.a);
-			hash.chunks.b = byteswap(hash.chunks.b);
-			hash.chunks.c = byteswap(hash.chunks.c);
-			hash.chunks.d = byteswap(hash.chunks.d);
-			length = std::snprintf(cache.md5, 36, "%.8x%.8x%.8x%.8x", hash.chunks.a, hash.chunks.b, hash.chunks.c, hash.chunks.d);
+			md5_to_chars(cache.md5, hash);
+			length = 32;
 		}
 		cache.index = index;
 	}
@@ -47,14 +42,14 @@ namespace day14a {
 			if(hc.index != i) {
 				hash_and_stretch(key, i, stretch, hc);
 			}
-			char c = find_sequence(hc.md5, 0, 3);
+			char c = find_sequence<3>(hc.md5, 0);
 			if(c != 0) {
 				for(int j = i + 1; j <= i + 1000; ++j) {
 					auto& hc = hash_cache[j % 1000];
 					if(hc.index != j) {
 						hash_and_stretch(key, j, stretch, hc);
 					}
-					if(find_sequence(hc.md5, c, 5)) {
+					if(find_sequence<5>(hc.md5, c)) {
 						if(++found == 64) {
 							return i;
 						}
@@ -65,7 +60,7 @@ namespace day14a {
 		}
 		return 0;
 	}
-	
+
 	void run() {
 		std::cout << "day14a " << get_index("ahsbgdzn", 0) << '\n';
 		std::cout << "day14b " << get_index("ahsbgdzn", 2016) << '\n';
