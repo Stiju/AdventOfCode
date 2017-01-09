@@ -12,9 +12,8 @@ namespace day5a {
 		uint32_t password = 0;
 		char key[64], *key_end = key + size;
 		std::memcpy(key, input.c_str(), size);
-		size = sizeof(key) - size;
 		for(;; ++i) {
-			std::snprintf(key_end, size, "%d", i);
+			_itoa(i, key_end, 10);
 			auto hash = byteswap(md5(key, strlen(key)).chunks.a);
 			if(hash < 0x00001000) {
 				password |= position * ((hash & 0x00000f00) >> 8);
