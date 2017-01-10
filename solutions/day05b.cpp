@@ -13,7 +13,7 @@ namespace day5b {
 		char key[64], *key_end = key + size, bitset = 0;
 		std::memcpy(key, input.c_str(), size);
 		for(;; ++i) {
-			_itoa(i, key_end, 10);
+			homemade_itoa(i, key_end);
 			auto hash = byteswap(md5(key, strlen(key)).chunks.a);
 			if(hash < 0x00001000) {
 				size_t position = ((hash & 0x00000f00) >> 8);

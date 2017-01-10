@@ -15,3 +15,4 @@
 #include <cstring>
 
 std::string read_file(const char* filename);
+void homemade_itoa(int value, char* str);

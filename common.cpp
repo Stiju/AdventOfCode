@@ -14,3 +14,14 @@ std::string read_file(const char* filename) {
 	file.read(&content[0], content.size());
 	return content;
 }
+
+void homemade_itoa(int value, char* str) {
+	char buffer[12];
+	char* p = &buffer[11];
+	*p = 0;
+	do {
+		*--p = '0' + value % 10;
+		value /= 10;
+	} while(value);
+	std::memcpy(str, p, &buffer[12] - p);
+}
