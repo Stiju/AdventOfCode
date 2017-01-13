@@ -1,40 +1,40 @@
 #include "../common.h"
+#include "../stopwatch.h"
 
 namespace day16a {
-	std::string almost_dragon_curve(std::string data, int size) {
+	void almost_dragon_curve(std::string& data, int size) {
 		int len = data.size();
 		data.resize(size);
+		char* ptr = const_cast<char*>(data.data());
 		for(;;) {
-			int max_size = size - len - 1;
-			if(max_size < 0) {
+			int iterations = std::min(len, size - len - 1);
+			if(iterations < 0) {
 				break;
 			}
-			data[len] = '0';
-			int iterations = std::min(len, max_size);
+			ptr[len] = '0';
 			for(int i = 0; i < iterations; ++i) {
-				data[len + i + 1] = data[len - i - 1] == '0' ? '1' : '0';
+				ptr[len + i + 1] = ptr[len - i - 1] == '0' ? '1' : '0';
 			}
 			len = len * 2 + 1;
 		}
-		return data;
 	}
 
-	std::string calculate_checksum(const std::string& data) {
-		std::string checksum;
-		int len = data.size() / 2;
-		checksum.resize(len);
-		for(int i = 0; i < len; ++i) {
-			int x = i * 2;
-			checksum[i] = data[x] == data[x + 1] ? '1' : '0';
-		}
-		return checksum;
-	}
-
-	std::string dragon_checksum(const std::string& input, int disk_size) {
-		auto checksum = almost_dragon_curve(input, disk_size);
+	void calculate_checksum(std::string& data) {
+		int len = data.size();
+		char* ptr = const_cast<char*>(data.data());
 		do {
-			checksum = calculate_checksum(checksum);
-		} while(!(checksum.size() & 1));
+			len /= 2;
+			for(int i = 0; i < len; ++i) {
+				int x = i * 2;
+				ptr[i] = ptr[x] == ptr[x + 1] ? '1' : '0';
+			}
+		} while(!(len & 1));
+		data.resize(len);
+	}
+
+	std::string dragon_checksum(std::string checksum, int disk_size) {
+		almost_dragon_curve(checksum, disk_size);
+		calculate_checksum(checksum);
 		return checksum;
 	}
 
