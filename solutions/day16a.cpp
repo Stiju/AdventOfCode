@@ -39,7 +39,7 @@ namespace day16a {
 	}
 
 	void run() {
-		std::cout << "day15a " << dragon_checksum("10011111011011001", 272) << "\n";
-		std::cout << "day15b " << dragon_checksum("10011111011011001", 35651584) << '\n';
+		std::cout << "day16a " << dragon_checksum("10011111011011001", 272) << "\n";
+		std::cout << "day16b " << dragon_checksum("10011111011011001", 35651584) << '\n';
 	}
 }
