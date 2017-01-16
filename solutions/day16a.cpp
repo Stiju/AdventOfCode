@@ -1,5 +1,4 @@
 #include "../common.h"
-#include "../stopwatch.h"
 
 namespace day16a {
 	void almost_dragon_curve(std::string& data, int size) {
