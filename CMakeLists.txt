@@ -32,4 +32,5 @@ add_executable(aoc2016
 	solutions/day14a.cpp
 	solutions/day15a.cpp
 	solutions/day16a.cpp
+	solutions/day17a.cpp
 	)
